@@ -4,7 +4,7 @@ import Main from './components/Main';
 function App() {
 
   return (
-    <StompSessionProvider url={'http://localhost:8080/ws-endpoint/'}>
+    <StompSessionProvider url={'process.env.REACT_APP_BACKEND_URL'}>
       <Main />
     </StompSessionProvider>
   );
