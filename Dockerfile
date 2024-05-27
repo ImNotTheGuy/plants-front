@@ -1,11 +1,12 @@
 FROM node:18-alpine as build
 
-ARG BACKEND_URL
-ENV REACT_APP_BACKEND_URL $BACKEND_URL
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
+
+ARG BACKEND_URL
+ENV REACT_APP_BACKEND_URL $BACKEND_URL
 
 RUN npm run build
 
