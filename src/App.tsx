@@ -1,15 +1,26 @@
 import { StompSessionProvider } from 'react-stomp-hooks';
 import Main from './components/Main';
+import NoWebSocketConnexion from './components/NoWebSocketConnexion';
 
 function App() {
 
-  console.log("Welcome ! ", process.env.REACT_APP_BACKEND_URL)
+  let url = null;
+  if (process.env.REACT_APP_BACKEND_URL) {
+    url = process.env.REACT_APP_BACKEND_URL;
+    console.log('url', url)
+  }
 
-  return (
-    <StompSessionProvider url={'process.env.REACT_APP_BACKEND_URL'}>
-      <Main />
-    </StompSessionProvider>
-  );
+  if (url !== null) {
+    return (
+      <StompSessionProvider url={url}>
+        <Main />
+      </StompSessionProvider>
+    )
+  } else {
+    return (
+      <NoWebSocketConnexion/>
+    )
+  }
 }
 
 export default App;

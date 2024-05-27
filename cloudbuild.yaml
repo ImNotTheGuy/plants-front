@@ -11,6 +11,8 @@ steps:
       - 'plants-front'
       - '--image'
       - 'gcr.io/ludops/plants-front:$COMMIT_SHA'
+      - '--update-env-vars'
+      - 'REACT_APP_BACKEND_URL=$_BACKEND_URL'
       - '--region'
       - 'europe-west3'
 options:
