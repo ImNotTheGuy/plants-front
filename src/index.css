@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* To add custom CSS that can be called like a tailwind class */
+@layer utilities {
+    .filter-svg{
+        filter: invert(70%) sepia(0%) saturate(100%) hue-rotate(0deg) brightness(100%) contrast(100%);
+    }
+
+    .test-blue{
+        fill: "#ff0000"
+    }
+    
+}
