@@ -1,6 +1,6 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/ludops/plants-front:$COMMIT_SHA', '.', '--build-arg="REACT_APP_BACKEND_URL=$BACKEND_URL"']
+    args: ['build', '-t', 'gcr.io/ludops/plants-front:$COMMIT_SHA', '.', '--build-arg="BACKEND_URL=$_BACKEND_URL"']
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/ludops/plants-front:$COMMIT_SHA']
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
