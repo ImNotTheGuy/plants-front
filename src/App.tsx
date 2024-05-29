@@ -9,7 +9,7 @@ function App() {
     url = process.env.REACT_APP_BACKEND_URL;
   }
     return (
-      <StompSessionProvider url={'http://10.10.0.0:8080/ws-endpoint'}>
+      <StompSessionProvider url={'https://10.10.0.0:8080/ws-endpoint'}>
         <Main />
       </StompSessionProvider>
     )
