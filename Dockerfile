@@ -5,9 +5,6 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 
-ARG BACKEND_URL
-RUN echo "REACT_APP_BACKEND_URL=${BACKEND_URL}" > .env
-
 RUN npm run build
 
 FROM nginx:alpine
