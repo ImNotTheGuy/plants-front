@@ -6,7 +6,7 @@ function App() {
   
   document.title = "Plants !";
 
-  const url ='http://localhost:8080/ws-endpoint';
+  const url ='https://plants.ludops.com/ws-endpoint';
 
   return (
       <StompSessionProvider url={url}>
