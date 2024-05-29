@@ -28,7 +28,7 @@ function Main() {
                         )
                     })
                 ) : (
-                    <p className='text-4xl text-blue-400'>Waiting for data...</p>
+                    <p className='p-3 text-4xl text-blue-400'>Waiting for data...</p>
                 )}
             </div>
         </div>
