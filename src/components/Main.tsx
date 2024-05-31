@@ -8,17 +8,19 @@ function Main() {
 
     const [data, setData] = useState<HumidityLevels>();
     const [message, setMessage] = useState("");
+    const [title, setTitle] = useState("Hi :)")
 
     useSubscription('/topic/humidity-levels', (message) => {
         console.log('message', message);
         setData(JSON.parse(message.body));
-        setMessage(message.body)
+        setMessage(message.body);
+        setTitle(message.body.title);
     });
 
     return (
         <div className="flex flex-col  h-screen w-screen">
             <div className="flex pb-3 h-1/6 w-full">
-                <Banner></Banner>
+                <Banner title={title}></Banner>
             </div>
             <div className="flex flex-wrap sm:flex-row lg:flex-row md:flex-wrap md:flex-row h-5/6 w-full">
                 {data ? (
