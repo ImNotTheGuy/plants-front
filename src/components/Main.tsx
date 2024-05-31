@@ -14,15 +14,12 @@ function Main() {
             setTitle(data.title);
         }
     }, [data]);
+    
     useSubscription('/topic/humidity-levels', (message) => {
-        console.log('message', message);
-        setData(JSON.parse(message.body));
-        setMessage(message.body);
-        if (data && data.title) {
-            setTitle(data.title);
-        }
+        const parsedData = JSON.parse(message.body) as HumidityLevels;
+        setData(parsedData);
     });
-
+    
     return (
         <div className="flex flex-col  h-screen w-screen">
             <div className="flex pb-3 h-1/6 w-full">
