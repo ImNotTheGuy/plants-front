@@ -9,7 +9,11 @@ function Main() {
     const [data, setData] = useState<HumidityLevels>();
     const [message, setMessage] = useState("");
     const [title, setTitle] = useState("Hi :)")
-
+    useEffect(() => {
+        if (data && data.title) {
+            setTitle(data.title);
+        }
+    }, [data]);
     useSubscription('/topic/humidity-levels', (message) => {
         console.log('message', message);
         setData(JSON.parse(message.body));
