@@ -14,7 +14,9 @@ function Main() {
         console.log('message', message);
         setData(JSON.parse(message.body));
         setMessage(message.body);
-        setTitle(data.title);
+        if (data && data.title) {
+            setTitle(data.title);
+        }
     });
 
     return (
