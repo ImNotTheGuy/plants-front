@@ -17,10 +17,10 @@ function Main() {
     
     return (
         <div className="flex flex-col  h-screen w-screen">
-            <div className="flex pb-3 h-1/6 w-full">
+            <div className="flex pb-3 h-2/6 w-full">
                 <Banner title={title}></Banner>
             </div>
-            <div className="flex flex-wrap sm:flex-row lg:flex-row md:flex-wrap md:flex-row h-5/6 w-full">
+            <div className="flex flex-wrap sm:flex-row lg:flex-row md:flex-wrap md:flex-row h-4/6 w-full">
                 {data ? (
                     data.sensors?.sort((sensorA, sensorB) => sensorA.plant_number - sensorB.plant_number).map(sensor => {
                         return (
