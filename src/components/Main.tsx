@@ -7,17 +7,12 @@ import Dashboard from "./Dashboard";
 function Main() {
 
     const [data, setData] = useState<HumidityLevels>();
-    const [message, setMessage] = useState("");
     const [title, setTitle] = useState("Hi :)")
-    useEffect(() => {
-        if (data && data.title) {
-            setTitle(data.title);
-        }
-    }, [data]);
     
     useSubscription('/topic/humidity-levels', (message) => {
         const parsedData = JSON.parse(message.body) as HumidityLevels;
         setData(parsedData);
+        setTitle(parsedData.title);
     });
     
     return (
